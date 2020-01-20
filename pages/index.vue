@@ -17,7 +17,6 @@ export default {
 <style lang="scss" scoped>
 .container {
   display: flex;
-
   height: 100%;
   min-height: 300vh;
 }

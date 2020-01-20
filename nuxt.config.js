@@ -30,7 +30,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["~/plugins/smooth-scroll"],
   /*
    ** Nuxt.js dev-modules
    */
