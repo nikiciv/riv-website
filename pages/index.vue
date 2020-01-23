@@ -1,31 +1,25 @@
 <template>
-  <div class="container">
-    <a href="#div-id" v-smooth-scroll>Anchor</a>
-    <div id="div-id"></div>
+  <div class="content">
+    <navigation />
   </div>
 </template>
 
 <script>
+import Navigation from "~/components/Navigation";
+
 export default {
-  layout: "home",
-  head: {
-    title: "Home"
+  components: {
+    Navigation
   }
 };
 </script>
 
-<style lang="scss" scoped>
-.container {
+<style scoped>
+.content {
   display: flex;
+  background-color: #0a192f;
   height: 100%;
+  flex-direction: column;
   min-height: 300vh;
-}
-
-#div-id {
-  height: 50px;
-  width: 100px;
-  background-color: red;
-  position: relative;
-  top: 200px;
 }
 </style>
