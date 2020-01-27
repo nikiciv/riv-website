@@ -17,7 +17,7 @@ export default {
 <style scoped>
 .content {
   display: flex;
-  background-color: #0a192f;
+  /* background-color: #0a192f; */
   height: 100%;
   flex-direction: column;
   min-height: 300vh;
