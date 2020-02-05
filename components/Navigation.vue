@@ -1,8 +1,19 @@
 <template>
-  <header class="header">
-    <div class="logo">{{ceva}}</div>
+  <header
+    :class="{
+      header: true,
+      'header-scroll-direction-none': scrollDirection === 'none',
+      'header-scroll-direction-up': scrollDirection === 'up',
+      'header-scroll-direction-down': scrollDirection === 'down'
+    }"
+  >
+    <div class="logo">{{ ceva }}</div>
     <nav class="nav-container">
-      <div v-for="(navLink, index) in navLinks" :key="index" class="nav-list-item">{{navLink.name}}</div>
+      <div
+        v-for="(navLink, index) in navLinks"
+        :key="index"
+        class="nav-list-item"
+      >{{ navLink.name }}</div>
     </nav>
   </header>
 </template>
@@ -17,7 +28,7 @@ export default {
     return {
       ceva: config.siteTitle,
       navLinks: config.navLinks,
-      isMounted: true,
+      isMounted: false,
       menuOpen: false,
       scrollDirection: "none",
       lastScrollTop: 0
@@ -26,7 +37,6 @@ export default {
   methods: {
     handleScroll: function() {
       const fromTop = window.scrollY;
-      console.log(this.lastScrollTop);
       // Make sure it scrolls more than DELTA
       if (
         !this.isMounted ||
@@ -52,6 +62,7 @@ export default {
     }
   },
   mounted() {
+    this.isMounted = true;
     window.addEventListener("scroll", this.handleScroll);
   },
   beforeDestroy() {
@@ -69,22 +80,32 @@ export default {
   padding: 0px 50px;
   background-color: #0a192f;
   color: white;
-  /* transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1); */
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   /* z-index: 11; */
   /* filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important; */
   width: 100%;
   height: 100px;
-  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+  /* transform: translateY(0px); */
   /* height: ${props => (props.scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight)};
   box-shadow: ${props =>
     props.scrollDirection === 'up' ? `0 10px 30px -10px ${colors.shadowNavy}` : 'none'};
-  transform: translateY(
-    ${props => (props.scrollDirection === 'down' ? `-${theme.navScrollHeight}` : '0px')}
-  );
+
   ${media.desktop`padding: 0 40px;`};
   ${media.tablet`padding: 0 25px;`}; */
+}
+
+.header-scroll-direction-none {
+  height: 70px;
+}
+
+.header-scroll-direction-up {
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+}
+
+.header-scroll-direction-down {
+  transform: translateY("-70px");
 }
 
 .logo {
