@@ -7,13 +7,15 @@
       'header-scroll-direction-down': scrollDirection === 'down'
     }"
   >
-    <div class="logo">{{ ceva }}</div>
+    <div class="logo" v-if="isMounted">{{ ceva }}</div>
     <nav class="nav-container">
-      <div
-        v-for="(navLink, index) in navLinks"
-        :key="index"
-        class="nav-list-item"
-      >{{ navLink.name }}</div>
+      <transition name="fade" v-for="(navLink, index) in navLinks" :key="index">
+        <div
+          v-show="isMounted"
+          :style="{transitionDelay: index * 0.1 + 's'}"
+          class="nav-list-item"
+        >{{ navLink.name }}</div>
+      </transition>
     </nav>
   </header>
 </template>
@@ -144,4 +146,20 @@ export default {
 .nav-list-item {
   margin-right: 20px;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0.01;
+  transform: translateY(-20px);
+  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 </style>
+
