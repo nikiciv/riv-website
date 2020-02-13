@@ -1,15 +1,18 @@
 <template>
   <div class="content">
+    <scroll-indicator />
     <navigation />
   </div>
 </template>
 
 <script>
 import Navigation from "~/components/Navigation";
+import ScrollIndicator from "~/components/ScrollIndicator";
 
 export default {
   components: {
-    Navigation
+    Navigation,
+    ScrollIndicator
   }
 };
 </script>
