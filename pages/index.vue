@@ -2,17 +2,23 @@
   <div class="content">
     <scroll-indicator />
     <navigation />
+    <landing />
+    <about />
   </div>
 </template>
 
 <script>
-import Navigation from "~/components/Navigation";
 import ScrollIndicator from "~/components/ScrollIndicator";
+import Navigation from "~/components/Navigation";
+import Landing from "~/components/Landing";
+import About from "~/components/About";
 
 export default {
   components: {
+    ScrollIndicator,
     Navigation,
-    ScrollIndicator
+    Landing,
+    About
   }
 };
 </script>
@@ -20,9 +26,9 @@ export default {
 <style scoped>
 .content {
   display: flex;
-  /* background-color: #0a192f; */
+  background: linear-gradient(to bottom left, #000000 0%, #666699 100%);
   height: 100%;
   flex-direction: column;
-  min-height: 300vh;
+  font-family: "IBM Plex Serif", serif;
 }
 </style>

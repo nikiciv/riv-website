@@ -80,7 +80,7 @@ export default {
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  background-color: #0a192f;
+  /* background-color: #116466; */
   color: white;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   /* z-index: 11; */
@@ -112,39 +112,23 @@ export default {
 
 .logo {
   margin-right: auto;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* a {
-    display: block;
-    color: ${colors.green};
-    width: 42px;
-    height: 42px;
-    &:hover,
-    &:focus {
-      svg {
-        fill: ${colors.transGreen};
-      }
-    }
-    svg {
-      fill: none;
-      transition: ${theme.transition};
-      user-select: none;
-    }
-  } */
 }
 
 .nav-container {
   display: flex;
   position: relative;
   color: #ccd6f6;
-  /* font-family: ${fonts.SFMono}; */
   /* counter-reset: item 0;
   z-index: 12; */
 }
 
 .nav-list-item {
   margin-right: 20px;
+  cursor: pointer;
+}
+
+.nav-list-item:hover {
+  color: red;
 }
 
 .fade-enter-active,
