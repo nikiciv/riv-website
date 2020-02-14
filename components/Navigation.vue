@@ -82,26 +82,16 @@ export default {
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  /* background-color: #116466; */
+  background-color: #116466;
   color: white;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  /* z-index: 11; */
-  /* filter: none !important;
-  pointer-events: auto !important;
-  user-select: auto !important; */
+  transform: translateY(0);
   width: 100%;
-  height: 100px;
-  /* transform: translateY(0px); */
-  /* height: ${props => (props.scrollDirection === 'none' ? theme.navHeight : theme.navScrollHeight)};
-  box-shadow: ${props =>
-    props.scrollDirection === 'up' ? `0 10px 30px -10px ${colors.shadowNavy}` : 'none'};
-
-  ${media.desktop`padding: 0 40px;`};
-  ${media.tablet`padding: 0 25px;`}; */
+  height: 70px;
 }
 
 .header-scroll-direction-none {
-  height: 70px;
+  height: 100px;
 }
 
 .header-scroll-direction-up {
@@ -109,7 +99,7 @@ export default {
 }
 
 .header-scroll-direction-down {
-  transform: translateY("-70px");
+  transform: translateY(-70px);
 }
 
 .logo {
@@ -120,8 +110,6 @@ export default {
   display: flex;
   position: relative;
   color: #ccd6f6;
-  /* counter-reset: item 0;
-  z-index: 12; */
 }
 
 .nav-list-item {
