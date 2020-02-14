@@ -1,5 +1,5 @@
 <template>
-  <div class="about-container"></div>
+  <div id="about"></div>
 </template>
 
 <script>
@@ -7,13 +7,12 @@ export default {};
 </script>
 
 <style>
-.about-container {
+#about {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
-  /* background-color: #116466; */
 }
 </style>

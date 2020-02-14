@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .content {
   display: flex;
-  background: linear-gradient(to bottom left, #000000 0%, #666699 100%);
+  background: linear-gradient(to top, #000000 0%, #666699 100%);
   height: 100%;
   flex-direction: column;
   font-family: "IBM Plex Serif", serif;

@@ -10,11 +10,13 @@
     <div class="logo" v-if="isMounted">{{ ceva }}</div>
     <nav class="nav-container">
       <transition name="fade" v-for="(navLink, index) in navLinks" :key="index">
-        <div
+        <a
+          :href="navLink.url"
+          v-smooth-scroll
           v-show="isMounted"
           :style="{transitionDelay: index * 0.1 + 's'}"
           class="nav-list-item"
-        >{{ navLink.name }}</div>
+        >{{ navLink.name }}</a>
       </transition>
     </nav>
   </header>
@@ -125,10 +127,12 @@ export default {
 .nav-list-item {
   margin-right: 20px;
   cursor: pointer;
+  text-decoration: none;
+  color: aliceblue;
 }
 
 .nav-list-item:hover {
-  color: red;
+  color: #64ffda;
 }
 
 .fade-enter-active,
