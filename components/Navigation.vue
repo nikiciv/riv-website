@@ -7,9 +7,11 @@
       'header-scroll-direction-down': scrollDirection === 'down'
     }"
   >
-    <div class="logo" v-if="isMounted">{{ ceva }}</div>
+    <transition name="fade">
+      <div class="logo" v-show="isMounted" :style="{transitionDelay: '200ms'}">{{ ceva }}</div>
+    </transition>
     <nav class="nav-container">
-      <transition name="fade" v-for="(navLink, index) in navLinks" :key="index">
+      <transition name="fadedown" v-for="(navLink, index) in navLinks" :key="index">
         <a
           :href="navLink.url"
           v-smooth-scroll
@@ -19,6 +21,11 @@
         >{{ navLink.name }}</a>
       </transition>
     </nav>
+    <div class="hamburger">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -123,15 +130,60 @@ export default {
   color: #64ffda;
 }
 
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  margin: 0 -12px 0 0;
+  padding: 15px;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+  display: none;
+}
+
+@media only screen and (max-width: 760px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+.hamburger-box {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 24px;
+}
+
+.hamburger-inner {
+}
+
 .fade-enter-active,
 .fade-leave-active {
+  opacity: 1;
+  transition: opacity 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0.01;
+  transition: opacity 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.fadedown-enter-active,
+.fadedown-leave-active {
   opacity: 1;
   transform: translateY(0px);
   transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
     transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-.fade-enter,
-.fade-leave-to {
+.fadedown-enter,
+.fadedown-leave-to {
   opacity: 0.01;
   transform: translateY(-20px);
   transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
