@@ -94,20 +94,4 @@ export default {
     padding: 0 25px;
   }
 } */
-
-.fadeup-enter-active,
-.fadeup-leave-active {
-  opacity: 1;
-  transform: translateY(0px);
-  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.fadeup-enter,
-.fadeup-leave-to {
-  opacity: 0.01;
-  transform: translateY(20px);
-  transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
 </style>
