@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: coral;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   opacity: 1;

@@ -21,11 +21,17 @@
         >{{ navLink.name }}</a>
       </transition>
     </nav>
-    <div class="hamburger">
+    <div class="hamburger" v-on:click="toggleMenu">
       <div class="hamburger-box">
-        <div class="hamburger-inner"></div>
+        <div
+          :class="{
+          'hamburger-inner': menuOpen === false,
+          'hamburger-inner-menu-open': menuOpen === true,
+        }"
+        ></div>
       </div>
     </div>
+    <!-- <p v-if="menuOpen">Ivo</p> -->
   </header>
 </template>
 
@@ -70,6 +76,9 @@ export default {
       }
 
       this.lastScrollTop = fromTop;
+    },
+    toggleMenu: function() {
+      this.menuOpen = !this.menuOpen;
     }
   },
   mounted() {
@@ -148,9 +157,13 @@ export default {
   display: none;
 }
 
+/* Tablet */
 @media only screen and (max-width: 760px) {
   .hamburger {
     display: flex;
+  }
+  .nav-container {
+    display: none;
   }
 }
 
@@ -162,6 +175,95 @@ export default {
 }
 
 .hamburger-inner {
+  background-color: black;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  border-radius: 3px;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transition-duration: 0.22s;
+  transition-property: transform;
+  transition-delay: 0s;
+  transform: rotate(0deg);
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+  background-color: black;
+  position: absolute;
+  left: auto;
+  right: 0;
+  width: 30px;
+  height: 2px;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform;
+  border-radius: 4px;
+}
+
+.hamburger-inner::before {
+  width: 120%;
+  top: -10px;
+  opacity: 1;
+  transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+}
+
+.hamburger-inner::after {
+  width: 80%;
+  bottom: -10px;
+  transform: rotate(0);
+  transition: bottom 0.1s ease-in 0.25s,
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger-inner-menu-open {
+  background-color: black;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  border-radius: 3px;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transition-duration: 0.22s;
+  transition-property: transform;
+  transition-delay: 0.12s;
+  transform: rotate(225deg);
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger-inner-menu-open::before,
+.hamburger-inner-menu-open::after {
+  content: "";
+  display: block;
+  background-color: black;
+  position: absolute;
+  left: auto;
+  right: 0;
+  width: 30px;
+  height: 2px;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform;
+  border-radius: 4px;
+}
+.hamburger-inner-menu-open::before {
+  width: 100%;
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+}
+.hamburger-inner-menu-open::after {
+  width: 100%;
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out,
+    transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
 }
 </style>
 
