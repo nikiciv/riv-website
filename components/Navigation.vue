@@ -31,16 +31,20 @@
         ></div>
       </div>
     </div>
-    <!-- <p v-if="menuOpen">Ivo</p> -->
+    <navigation-sidebar :menuOpen="menuOpen" />
   </header>
 </template>
 
 <script>
 import config from "~/assets/config.js";
+import NavigationSidebar from "@/components/NavigationSidebar";
 
 const DELTA = 5;
 
 export default {
+  components: {
+    NavigationSidebar
+  },
   data() {
     return {
       ceva: config.siteTitle,
