@@ -3,8 +3,9 @@
     :class="{
       'navigation-sidebar': true,
       'navigation-sidebar-closed': menuOpen === false,
-      'navigation-sidebar-opened': menuOpen === true,
+      'navigation-sidebar-opened': menuOpen === true
     }"
+    @click="toggleMenu"
   >
     <div class="sidebar"></div>
   </div>
@@ -26,7 +27,9 @@ export default {
     }
   },
   methods: {
-    salut: function() {}
+    toggleMenu: function() {
+      this.$emit("toggle-menu");
+    }
   }
 };
 </script>
@@ -66,7 +69,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: lightpink;
+  background-color: var(--bg-color);
   padding: 50px;
   width: 50vw;
   height: 100%;

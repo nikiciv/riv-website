@@ -1,5 +1,8 @@
 :root {
-  --main-bg-color: coral;
+  --bg-color: #160f30;
+  --main-text-color: white;
+  --secondary-text-color: gray;
+  --third: green;
 }
 
 .fade-enter-active,

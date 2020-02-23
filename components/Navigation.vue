@@ -8,30 +8,41 @@
     }"
   >
     <transition name="fade">
-      <div class="logo" v-show="isMounted" :style="{transitionDelay: '200ms'}">{{ ceva }}</div>
+      <div
+        class="logo"
+        v-show="isMounted"
+        :style="{ transitionDelay: '200ms' }"
+      >
+        {{ ceva }}
+      </div>
     </transition>
     <nav class="nav-container">
-      <transition name="fadedown" v-for="(navLink, index) in navLinks" :key="index">
+      <transition
+        name="fadedown"
+        v-for="(navLink, index) in navLinks"
+        :key="index"
+      >
         <a
           :href="navLink.url"
           v-smooth-scroll
           v-show="isMounted"
-          :style="{transitionDelay: index * 0.1 + 's'}"
+          :style="{ transitionDelay: index * 0.1 + 's' }"
           class="nav-list-item"
-        >{{ navLink.name }}</a>
+          >{{ navLink.name }}</a
+        >
       </transition>
     </nav>
     <div class="hamburger" v-on:click="toggleMenu">
       <div class="hamburger-box">
         <div
           :class="{
-          'hamburger-inner': menuOpen === false,
-          'hamburger-inner-menu-open': menuOpen === true,
-        }"
+            'hamburger-inner': menuOpen === false,
+            'hamburger-inner-menu-open': menuOpen === true
+          }"
         ></div>
       </div>
     </div>
-    <navigation-sidebar :menuOpen="menuOpen" />
+    <navigation-sidebar :menuOpen="menuOpen" @toggle-menu="toggleMenu" />
   </header>
 </template>
 
@@ -83,14 +94,32 @@ export default {
     },
     toggleMenu: function() {
       this.menuOpen = !this.menuOpen;
+    },
+    handleResize: function() {
+      if (window.innerWidth > 768 && this.menuOpen) {
+        this.toggleMenu();
+      }
+    },
+    handleKeydown: function(e) {
+      if (!this.menuOpen) {
+        return;
+      }
+
+      if (e.which === 27 || e.key === "Escape") {
+        this.toggleMenu();
+      }
     }
   },
   mounted() {
     this.isMounted = true;
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("resize", this.handleResize);
+    window.addEventListener("keydown", e => this.handleKeydown(e));
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener("keydown", e => this.handleKeydown(e));
   }
 };
 </script>
@@ -102,8 +131,8 @@ export default {
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  background-color: #116466;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--main-text-color);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: translateY(0);
   width: 100%;
@@ -140,7 +169,7 @@ export default {
 }
 
 .nav-list-item:hover {
-  color: #64ffda;
+  color: var(--third);
 }
 
 .hamburger {
@@ -179,11 +208,11 @@ export default {
 }
 
 .hamburger-inner {
-  background-color: black;
   position: absolute;
   width: 30px;
   height: 2px;
   border-radius: 3px;
+  background-color: var(--third);
   top: 50%;
   left: 0;
   right: 0;
@@ -198,7 +227,7 @@ export default {
 .hamburger-inner::after {
   content: "";
   display: block;
-  background-color: black;
+  background-color: var(--third);
   position: absolute;
   left: auto;
   right: 0;
@@ -226,7 +255,7 @@ export default {
 }
 
 .hamburger-inner-menu-open {
-  background-color: black;
+  background-color: var(--third);
   position: absolute;
   width: 30px;
   height: 2px;
@@ -239,13 +268,14 @@ export default {
   transition-delay: 0.12s;
   transform: rotate(225deg);
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: 99;
 }
 
 .hamburger-inner-menu-open::before,
 .hamburger-inner-menu-open::after {
   content: "";
   display: block;
-  background-color: black;
+  background-color: var(--third);
   position: absolute;
   left: auto;
   right: 0;
@@ -270,4 +300,3 @@ export default {
     transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
 }
 </style>
-

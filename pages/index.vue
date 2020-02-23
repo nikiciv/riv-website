@@ -28,7 +28,7 @@ export default {
 <style scoped>
 .content {
   display: flex;
-  background-color: var(--main-bg-color);
+  background-color: var(--bg-color);
   height: 100%;
   flex-direction: column;
   font-family: "IBM Plex Serif", serif;

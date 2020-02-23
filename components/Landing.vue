@@ -1,21 +1,22 @@
 <template>
   <div class="landing">
     <transition name="fadeup">
-      <div v-show="isMounted" class="greeting" :style="{transitionDelay: '100ms'}">Hello.</div>
-    </transition>
-    <transition name="fadeup">
       <div
         class="title-primary"
-        :style="{transitionDelay: '200ms'}"
+        :style="{ transitionDelay: '200ms' }"
         v-show="isMounted"
-      >I am Ivo Nikić.</div>
+      >
+        I am Ivo Nikić.
+      </div>
     </transition>
     <transition name="fadeup">
       <div
         class="title-secondary"
-        :style="{transitionDelay: '300ms'}"
+        :style="{ transitionDelay: '300ms' }"
         v-show="isMounted"
-      >I make magic on the Web.</div>
+      >
+        I write code.
+      </div>
     </transition>
   </div>
 </template>
@@ -49,11 +50,13 @@ export default {
 }
 
 .title-primary {
+  color: var(--main-text-color);
   font-size: 80px;
   margin: 0;
 }
 
 .title-secondary {
+  color: var(--secondary-text-color);
   font-size: 80px;
   margin: 0;
 }
