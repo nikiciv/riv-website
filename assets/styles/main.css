@@ -5,6 +5,10 @@
   --third: green;
 }
 
+body {
+  overflow-y: hidden;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   opacity: 1;

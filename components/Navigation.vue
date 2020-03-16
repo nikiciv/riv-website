@@ -8,41 +8,30 @@
     }"
   >
     <transition name="fade">
-      <div
-        class="logo"
-        v-show="isMounted"
-        :style="{ transitionDelay: '200ms' }"
-      >
-        {{ ceva }}
-      </div>
+      <div class="logo" v-show="isMounted" :style="{ transitionDelay: '200ms' }">{{ ceva }}</div>
     </transition>
     <nav class="nav-container">
-      <transition
-        name="fadedown"
-        v-for="(navLink, index) in navLinks"
-        :key="index"
-      >
+      <transition name="fadedown" v-for="(navLink, index) in navLinks" :key="index">
         <a
           :href="navLink.url"
           v-smooth-scroll
           v-show="isMounted"
           :style="{ transitionDelay: index * 0.1 + 's' }"
           class="nav-list-item"
-          >{{ navLink.name }}</a
-        >
+        >{{ navLink.name }}</a>
       </transition>
     </nav>
-    <div class="hamburger" v-on:click="toggleMenu">
+    <div class="hamburger" @click="toggleNavigationSidebar">
       <div class="hamburger-box">
         <div
           :class="{
-            'hamburger-inner': menuOpen === false,
-            'hamburger-inner-menu-open': menuOpen === true
+            'hamburger-inner': isNavigationSidebarOpen === false,
+            'hamburger-inner-menu-open': isNavigationSidebarOpen === true
           }"
         ></div>
       </div>
     </div>
-    <navigation-sidebar :menuOpen="menuOpen" @toggle-menu="toggleMenu" />
+    <!-- <navigation-sidebar :menuOpen="menuOpen" @toggle-menu="toggleMenu" /> -->
   </header>
 </template>
 
@@ -61,19 +50,28 @@ export default {
       ceva: config.siteTitle,
       navLinks: config.navLinks,
       isMounted: false,
-      menuOpen: false,
+      // menuOpen: false,
       scrollDirection: "none",
       lastScrollTop: 0
     };
   },
+  props: {
+    isNavigationSidebarOpen: {
+      type: Boolean,
+      required: true
+    }
+  },
   methods: {
+    toggleNavigationSidebar: function() {
+      this.$emit("toggle-navigation-sidebar");
+    },
     handleScroll: function() {
       const fromTop = window.scrollY;
       // Make sure it scrolls more than DELTA
       if (
         !this.isMounted ||
         Math.abs(this.lastScrollTop - fromTop) <= DELTA ||
-        this.menuOpen
+        this.isNavigationSidebarOpen
       ) {
         return;
       }
@@ -92,21 +90,18 @@ export default {
 
       this.lastScrollTop = fromTop;
     },
-    toggleMenu: function() {
-      this.menuOpen = !this.menuOpen;
-    },
     handleResize: function() {
-      if (window.innerWidth > 768 && this.menuOpen) {
-        this.toggleMenu();
+      if (window.innerWidth > 768 && this.isNavigationSidebarOpen) {
+        this.toggleNavigationSidebar();
       }
     },
     handleKeydown: function(e) {
-      if (!this.menuOpen) {
+      if (!this.isNavigationSidebarOpen) {
         return;
       }
 
       if (e.which === 27 || e.key === "Escape") {
-        this.toggleMenu();
+        this.toggleNavigationSidebar();
       }
     }
   },

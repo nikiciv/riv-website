@@ -2,10 +2,10 @@
   <div
     :class="{
       'navigation-sidebar': true,
-      'navigation-sidebar-closed': menuOpen === false,
-      'navigation-sidebar-opened': menuOpen === true
+      'navigation-sidebar-closed': isNavigationSidebarOpen === false,
+      'navigation-sidebar-opened': isNavigationSidebarOpen === true
     }"
-    @click="toggleMenu"
+    @click="toggleNavigationSidebar"
   >
     <div class="sidebar"></div>
   </div>
@@ -21,14 +21,14 @@ export default {
     };
   },
   props: {
-    menuOpen: {
+    isNavigationSidebarOpen: {
       type: Boolean,
       required: true
     }
   },
   methods: {
-    toggleMenu: function() {
-      this.$emit("toggle-menu");
+    toggleNavigationSidebar: function() {
+      this.$emit("toggle-navigation-sidebar");
     }
   }
 };
