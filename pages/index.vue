@@ -1,11 +1,7 @@
 <template>
-  <div class="content">
+  <div :class="{ 'content': true, 'content-no-overflow': isNavigationSidebarOpen === true }">
     <scroll-indicator />
     <navigation
-      :isNavigationSidebarOpen="isNavigationSidebarOpen"
-      @toggle-navigation-sidebar="toggleNavigationSidebar"
-    />
-    <navigation-sidebar
       :isNavigationSidebarOpen="isNavigationSidebarOpen"
       @toggle-navigation-sidebar="toggleNavigationSidebar"
     />
@@ -19,7 +15,6 @@
 <script>
 import ScrollIndicator from "~/components/ScrollIndicator";
 import Navigation from "~/components/Navigation";
-import NavigationSidebar from "~/components/NavigationSidebar";
 import Landing from "~/components/Landing";
 import About from "~/components/About";
 
@@ -32,7 +27,6 @@ export default {
   components: {
     ScrollIndicator,
     Navigation,
-    NavigationSidebar,
     Landing,
     About
   },
@@ -51,6 +45,9 @@ export default {
   height: 100%;
   flex-direction: column;
   font-family: "IBM Plex Serif", serif;
+}
+.content-no-overflow {
+  height: 100vh;
   overflow: hidden;
 }
 .main-section {

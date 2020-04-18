@@ -7,31 +7,36 @@
       'header-scroll-direction-down': scrollDirection === 'down'
     }"
   >
-    <transition name="fade">
-      <div class="logo" v-show="isMounted" :style="{ transitionDelay: '200ms' }">{{ ceva }}</div>
-    </transition>
-    <nav class="nav-container">
-      <transition name="fadedown" v-for="(navLink, index) in navLinks" :key="index">
-        <a
-          :href="navLink.url"
-          v-smooth-scroll
-          v-show="isMounted"
-          :style="{ transitionDelay: index * 0.1 + 's' }"
-          class="nav-list-item"
-        >{{ navLink.name }}</a>
+    <div class="header-elements-container">
+      <transition name="fade">
+        <div class="logo" v-show="isMounted" :style="{ transitionDelay: '200ms' }">{{ ceva }}</div>
       </transition>
-    </nav>
-    <div class="hamburger" @click="toggleNavigationSidebar">
-      <div class="hamburger-box">
-        <div
-          :class="{
+      <nav class="nav-container">
+        <transition name="fadedown" v-for="(navLink, index) in navLinks" :key="index">
+          <a
+            :href="navLink.url"
+            v-smooth-scroll
+            v-show="isMounted"
+            :style="{ transitionDelay: index * 0.1 + 's' }"
+            class="nav-list-item"
+          >{{ navLink.name }}</a>
+        </transition>
+      </nav>
+      <div class="hamburger" @click="toggleNavigationSidebar">
+        <div class="hamburger-box">
+          <div
+            :class="{
             'hamburger-inner': isNavigationSidebarOpen === false,
             'hamburger-inner-menu-open': isNavigationSidebarOpen === true
           }"
-        ></div>
+          ></div>
+        </div>
       </div>
+      <navigation-sidebar
+        :isNavigationSidebarOpen="isNavigationSidebarOpen"
+        @toggle-navigation-sidebar="toggleNavigationSidebar"
+      />
     </div>
-    <!-- <navigation-sidebar :menuOpen="menuOpen" @toggle-menu="toggleMenu" /> -->
   </header>
 </template>
 
@@ -144,6 +149,13 @@ export default {
 
 .header-scroll-direction-down {
   transform: translateY(-70px);
+}
+
+.header-elements-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 12;
 }
 
 .logo {
