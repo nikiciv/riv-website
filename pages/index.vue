@@ -44,7 +44,7 @@ export default {
   background-color: var(--bg-color);
   height: 100%;
   flex-direction: column;
-  font-family: "IBM Plex Serif", serif;
+  font-family: "Montserrat", sans-serif;
 }
 .content-no-overflow {
   height: 100vh;
