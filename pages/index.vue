@@ -1,6 +1,5 @@
 <template>
   <div :class="{ 'content': true, 'content-no-overflow': isNavigationSidebarOpen === true }">
-    <scroll-indicator />
     <navigation
       :isNavigationSidebarOpen="isNavigationSidebarOpen"
       @toggle-navigation-sidebar="toggleNavigationSidebar"
