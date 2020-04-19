@@ -250,6 +250,8 @@ export default {
   display: flex;
   position: relative;
   color: #ccd6f6;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .nav-list-item {
