@@ -1,18 +1,24 @@
 <template>
-  <div id="about"></div>
+  <div id="about">
+    <!-- sectionTitle & other section info will be passed from config file in future -->
+    <section-heading sectionTitle="About" />
+  </div>
 </template>
 
 <script>
-export default {};
+import SectionHeading from "@/components/SectionHeading";
+export default {
+  components: {
+    SectionHeading
+  }
+};
 </script>
 
 <style>
 #about {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  align-items: flex-start;
   min-height: 100vh;
+  color: white;
 }
 </style>
