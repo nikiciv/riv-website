@@ -173,7 +173,7 @@ export default {
   width: 35px;
   margin-top: 5px;
   border-radius: 100%;
-  border: solid 3px rgb(44, 45, 90, 0.7);
+  border: solid 3px var(--main-text-color);
   opacity: 0.005;
   -webkit-animation: puff-in-center 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
   animation: puff-in-center 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
@@ -186,7 +186,7 @@ export default {
   height: 25px;
   width: 25px;
   border-radius: 100%;
-  background: green;
+  background-color: var(--main-text-color);
   -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1)
     both;
   animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -249,7 +249,6 @@ export default {
 .nav-container {
   display: flex;
   position: relative;
-  color: #ccd6f6;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -258,11 +257,11 @@ export default {
   margin-right: 20px;
   cursor: pointer;
   text-decoration: none;
-  color: aliceblue;
+  color: var(--main-text-color);
 }
 
 .nav-list-item:hover {
-  color: var(--third);
+  /* color: var(--secondary-color); */
 }
 
 .hamburger {
@@ -305,7 +304,7 @@ export default {
   width: 30px;
   height: 2px;
   border-radius: 3px;
-  background-color: var(--third);
+  background-color: var(--main-text-color);
   top: 50%;
   left: 0;
   right: 0;
@@ -320,7 +319,7 @@ export default {
 .hamburger-inner::after {
   content: "";
   display: block;
-  background-color: var(--third);
+  background-color: var(--main-text-color);
   position: absolute;
   left: auto;
   right: 0;
@@ -348,7 +347,7 @@ export default {
 }
 
 .hamburger-inner-menu-open {
-  background-color: var(--third);
+  background-color: var(--main-text-color);
   position: absolute;
   width: 30px;
   height: 2px;
@@ -368,7 +367,7 @@ export default {
 .hamburger-inner-menu-open::after {
   content: "";
   display: block;
-  background-color: var(--third);
+  background-color: var(--main-text-color);
   position: absolute;
   left: auto;
   right: 0;

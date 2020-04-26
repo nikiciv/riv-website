@@ -1,8 +1,8 @@
 :root {
-  --bg-color: #160f30;
-  --main-text-color: white;
-  --secondary-text-color: gray;
-  --third: green;
+  --bg-color: white;
+  --secondary-color: darkorange;
+  --main-text-color: black;
+  --secondary-text-color:#606060;
 }
 
 body {

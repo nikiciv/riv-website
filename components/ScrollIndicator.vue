@@ -23,7 +23,7 @@ export default {
   top: 0;
   left: 0;
   height: 3px;
-  background-color: var(--third);
+  background-color: var(--secondary-color);
   z-index: 999;
 }
 </style>

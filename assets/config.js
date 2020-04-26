@@ -14,8 +14,5 @@ module.exports = {
       url: "#contact"
     }
   ],
-  navHeight: 100,
-  greenColor: "#64ffda",
-  navyColor: "#0a192f",
-  darkNavyColor: "#020c1b"
+  navHeight: 100
 };
