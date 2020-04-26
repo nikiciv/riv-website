@@ -43,7 +43,7 @@ export default {
   background-color: var(--bg-color);
   height: 100%;
   flex-direction: column;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 .content-no-overflow {
   height: 100vh;
