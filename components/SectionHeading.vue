@@ -1,5 +1,5 @@
 <template>
-  <h3 class="section-heading-container">{{ sectionTitle }}</h3>
+  <h3 class="section-heading">{{ sectionTitle }}</h3>
 </template>
 
 <script>
@@ -14,27 +14,10 @@ export default {
 </script>
 
 <style>
-.section-heading-container {
+.section-heading {
   display: flex;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  font-size: 30px;
-}
-
-.section-heading-container::before {
-  content: "";
-  background-color: gray;
-  height: 1px;
-  width: 50px;
-  margin-right: 10px;
-}
-
-.section-heading-container::after {
-  content: "";
-  background-color: gray;
-  height: 1px;
-  width: 300px;
-  margin-left: 10px;
+  color: var(--main-text-color);
+  font-size: 40px;
+  margin: 20px 0;
 }
 </style>
