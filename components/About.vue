@@ -15,6 +15,7 @@
           of Letraset sheets containing Lorem Ipsum passages,
           and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </p>
+        <skills />
       </div>
       <img src="~/assets/images/me.jpg" class="profile-pic" loading="lazy" />
     </div>
@@ -23,9 +24,12 @@
 
 <script>
 import SectionHeading from "@/components/SectionHeading";
+import Skills from "@/components/Skills";
+
 export default {
   components: {
-    SectionHeading
+    SectionHeading,
+    Skills
   }
 };
 </script>

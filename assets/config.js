@@ -14,5 +14,14 @@ module.exports = {
       url: "#contact"
     }
   ],
-  navHeight: 100
+  navHeight: 100,
+  skills: [
+    "Dummy 1",
+    "Dummy2",
+    "Dummy3",
+    "Dummy4",
+    "Dummy5",
+    "Dummy6",
+    "Dummy0"
+  ]
 };
