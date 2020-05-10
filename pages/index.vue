@@ -7,6 +7,7 @@
     <div class="main-section">
       <landing />
       <about />
+      <jobs />
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@ import ScrollIndicator from "~/components/ScrollIndicator";
 import Navigation from "~/components/Navigation";
 import Landing from "~/components/Landing";
 import About from "~/components/About";
+import Jobs from "~/components/Jobs";
 
 export default {
   data() {
@@ -27,7 +29,8 @@ export default {
     ScrollIndicator,
     Navigation,
     Landing,
-    About
+    About,
+    Jobs
   },
   methods: {
     toggleNavigationSidebar: function() {
@@ -43,7 +46,7 @@ export default {
   background-color: var(--bg-color);
   height: 100%;
   flex-direction: column;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 .content-no-overflow {
   height: 100vh;

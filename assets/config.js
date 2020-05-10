@@ -6,8 +6,8 @@ module.exports = {
       url: "#about"
     },
     {
-      name: "Projects",
-      url: "#projects"
+      name: "Experience",
+      url: "#jobs"
     },
     {
       name: "Contact",
@@ -23,5 +23,6 @@ module.exports = {
     "Dummy5",
     "Dummy6",
     "Dummy0"
-  ]
+  ],
+  companies: ["Evozon", "Modus Create", "Atoss", "Continental"]
 };
