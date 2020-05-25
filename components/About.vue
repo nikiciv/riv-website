@@ -55,12 +55,19 @@ export default {
 }
 .profile-pic {
   object-fit: cover;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   border-radius: 3px;
   filter: grayscale(100%) contrast(1);
 }
 .profile-pic:hover {
   filter: none;
+}
+/* Tablet */
+@media only screen and (max-width: 760px) {
+  .section-body {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
