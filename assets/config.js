@@ -24,5 +24,27 @@ module.exports = {
     "Dummy6",
     "Dummy0"
   ],
-  companies: ["Evozon", "Modus Create", "Atoss", "Continental"]
+  companies: ["Evozon", "Modus Create", "Atoss", "Continental"],
+  jobs: [
+    {
+      company: "Evozon",
+      title: "Front End Developer",
+      jobDescription: "Lorem ipsum."
+    },
+    {
+      company: "Modus Create",
+      title: "Front End Developer",
+      jobDescription: "Lorem ipsum."
+    },
+    {
+      company: "Atoss",
+      title: "Mobile Developer",
+      jobDescription: "Lorem ipsum."
+    },
+    {
+      company: "Continental",
+      title: "System Test Engineer",
+      jobDescription: "Lorem ipsum."
+    }
+  ]
 };

@@ -20,4 +20,10 @@ export default {
   font-size: 40px;
   margin: 20px 0;
 }
+/* Tablet */
+@media only screen and (max-width: 760px) {
+  .section-heading {
+    font-size: 24px;
+  }
+}
 </style>

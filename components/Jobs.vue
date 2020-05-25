@@ -1,39 +1,39 @@
 <template>
   <div id="jobs">
-    <div class="tabs-container">
-      <ul class="tab-list">
-        <li v-for="(company, index) in companies" :key="index">
-          <button class="tab-button" ref="tabs" @click="setActiveTabId(index)">{{company}}</button>
-        </li>
-      </ul>
-      <span class="highlight" :style="highlightTranslate" />
-    </div>
-    <tab-content />
+    <section-wrapper>
+      <section-heading sectionTitle="Where I've worked" />
+      <div class="tabs-container">
+        <ul class="tab-list">
+          <li v-for="(job, index) in jobs" :key="index">
+            <button class="tab-button" ref="tabs" @click="setActiveTabId(index)">{{job.company}}</button>
+          </li>
+        </ul>
+        <tab-content :jobs="jobs" :activeTabId="activeTabId" />
+      </div>
+    </section-wrapper>
   </div>
 </template>
 
 <script>
-import TabContent from "@/components/TabContent";
 import config from "~/assets/config.js";
+import SectionWrapper from "@/components/SectionWrapper";
+import TabContent from "@/components/TabContent";
+import SectionHeading from "@/components/SectionHeading";
 
-const { companies } = config;
+const { jobs, companies } = config;
 
 export default {
   components: {
-    TabContent
+    SectionWrapper,
+    TabContent,
+    SectionHeading
   },
   data() {
     return {
       activeTabId: 0,
-      companies
+      companies,
+      jobs
     };
-  },
-  computed: {
-    highlightTranslate() {
-      return `transform: translateY(${
-        this.activeTabId > 0 ? this.activeTabId * 40 : 0
-      }px)`;
-    }
   },
   methods: {
     setActiveTabId: function(index) {
@@ -88,17 +88,24 @@ export default {
   background-color: var(--main-text-color);
   outline: 0;
 }
-.highlight {
-  display: block;
-  background-color: var(--secondary-color);
-  width: 2px;
-  height: 40px;
-  border-radius: 3px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition-delay: 0.1s;
-  z-index: 10;
+
+@media only screen and (max-width: 600px) {
+  .tabs-container {
+    display: block;
+  }
+  .tab-list {
+    display: flex;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+    width: calc(100% + 100px);
+    margin-left: -50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .tab-list {
+    width: calc(100% + 50px);
+    margin-left: -25px;
+  }
 }
 </style>
