@@ -8,6 +8,7 @@
       <landing />
       <about />
       <jobs />
+      <contact />
     </div>
   </div>
 </template>
@@ -18,6 +19,7 @@ import Navigation from "~/components/Navigation";
 import Landing from "~/components/Landing";
 import About from "~/components/About";
 import Jobs from "~/components/Jobs";
+import Contact from "~/components/Contact";
 
 export default {
   data() {
@@ -30,7 +32,8 @@ export default {
     Navigation,
     Landing,
     About,
-    Jobs
+    Jobs,
+    Contact
   },
   methods: {
     toggleNavigationSidebar: function() {
@@ -53,7 +56,7 @@ export default {
   overflow: hidden;
 }
 .main-section {
-  padding: 0 150px;
+  padding: 0 200px;
   /* padding-top: 200px;
   padding-bottom: 200px; */
   overflow: hidden;
