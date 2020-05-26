@@ -1,52 +1,59 @@
 <template>
   <div class="landing">
-    <transition name="fadeup">
-      <div
-        class="title-overline"
-        :style="{ transitionDelay: '100ms' }"
-        v-show="isMounted"
-      >
-        Hi, my name is
-      </div>
-    </transition>
-    <transition name="fadeup">
-      <div
-        class="title-primary"
-        :style="{ transitionDelay: '200ms' }"
-        v-show="isMounted"
-      >
-        Ivo Nikić.
-      </div>
-    </transition>
-    <transition name="fadeup">
-      <div
-        class="title-secondary"
-        :style="{ transitionDelay: '300ms' }"
-        v-show="isMounted"
-      >
-        <vue-typed-js
-          :strings="['code', 'JS', 'React', 'Vue', 'CSS', 'Node']"
-          :loop="true"
+    <section-wrapper>
+      <transition name="fadeup">
+        <div
+          class="title-overline"
+          :style="{ transitionDelay: '100ms' }"
+          v-show="isMounted"
         >
-          <div>I write <span class="typing"></span>.</div>
-        </vue-typed-js>
-      </div>
-    </transition>
-    <transition name="fadeup">
-      <p
-        class="landing-description"
-        :style="{ transitionDelay: '400ms' }"
-        v-show="isMounted"
-      >
-        I'm a software engineer specialized in building high-quality web
-        applications.
-      </p>
-    </transition>
+          Hi, my name is
+        </div>
+      </transition>
+      <transition name="fadeup">
+        <div
+          class="title-primary"
+          :style="{ transitionDelay: '200ms' }"
+          v-show="isMounted"
+        >
+          Ivo Nikić.
+        </div>
+      </transition>
+      <transition name="fadeup">
+        <div
+          class="title-secondary"
+          :style="{ transitionDelay: '300ms' }"
+          v-show="isMounted"
+        >
+          <vue-typed-js
+            :strings="['code', 'JS', 'React', 'Vue', 'CSS', 'Node']"
+            :loop="true"
+          >
+            <div>I write <span class="typing"></span>.</div>
+          </vue-typed-js>
+        </div>
+      </transition>
+      <transition name="fadeup">
+        <p
+          class="landing-description"
+          :style="{ transitionDelay: '400ms' }"
+          v-show="isMounted"
+        >
+          I'm a software engineer specialized in building high-quality web
+          applications.
+        </p>
+      </transition>
+    </section-wrapper>
   </div>
 </template>
 
 <script>
+import SectionWrapper from "@/components/SectionWrapper";
+
 export default {
+  components: {
+    SectionWrapper
+  },
   data() {
     return {
       isMounted: false

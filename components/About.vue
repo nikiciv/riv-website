@@ -1,33 +1,41 @@
 <template>
   <div id="about">
-    <!-- sectionTitle & other section info will be passed from config file in future -->
-    <section-heading sectionTitle="About" />
-    <div class="section-body">
-      <div class="section-description">
-        <p class="section-description-paragraph">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-          leap into electronic typesetting, remaining essentially unchanged.
-        </p>
-        <p class="section-description-paragraph">
-          It was popularised in the 1960s with the release
-          of Letraset sheets containing Lorem Ipsum passages,
-          and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
-        <skills />
+    <section-wrapper>
+      <!-- sectionTitle & other section info will be passed from config file in future -->
+      <section-heading sectionTitle="About" />
+      <div class="section-body">
+        <div class="section-description">
+          <p class="section-description-paragraph">
+            Hi! I'm Ivo, a software engineer who enjoys building significant
+            things on the web.
+          </p>
+          <p class="section-description-paragraph">
+            I am driven by an insatiable thirst to improve and a proven track
+            record of building stable systems. Throughout the years I understood
+            that in order to be a great engineer technical skills are definitely
+            not enough. On top of that, excellent communication skills,
+            well-developed emotional intelligence and a strong desire to get
+            better every day are required.
+          </p>
+          <p class="section-description-paragraph">
+            Here are a few technologies I am working with:
+          </p>
+          <skills />
+        </div>
+        <img src="~/assets/images/me.jpg" class="profile-pic" loading="lazy" />
       </div>
-      <img src="~/assets/images/me.jpg" class="profile-pic" loading="lazy" />
-    </div>
+    </section-wrapper>
   </div>
 </template>
 
 <script>
+import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import Skills from "@/components/Skills";
 
 export default {
   components: {
+    SectionWrapper,
     SectionHeading,
     Skills
   }
