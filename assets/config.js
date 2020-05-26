@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   siteTitle: "Ivo Nikic | Web Developer",
   navLinks: [
     {
@@ -16,13 +16,14 @@ module.exports = {
   ],
   navHeight: 100,
   skills: [
-    "Dummy 1",
-    "Dummy2",
-    "Dummy3",
-    "Dummy4",
-    "Dummy5",
-    "Dummy6",
-    "Dummy0"
+    "JavaScript",
+    "React",
+    "HTML & CSS",
+    "Apollo",
+    "Redux",
+    "GraphQL",
+    "Vue.js",
+    "Node.js"
   ],
   companies: ["Evozon", "Modus Create", "Atoss", "Continental"],
   jobs: [
