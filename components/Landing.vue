@@ -15,7 +15,12 @@
         :style="{ transitionDelay: '300ms' }"
         v-show="isMounted"
       >
-        I write code.
+        <vue-typed-js
+          :strings="['code', 'JavaScript', 'React', 'Vue', 'CSS', 'Node']"
+          :loop="true"
+        >
+          <div>I write <span class="typing"></span>.</div>
+        </vue-typed-js>
       </div>
     </transition>
   </div>
