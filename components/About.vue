@@ -22,7 +22,13 @@
           </p>
           <skills />
         </div>
-        <img src="~/assets/images/me.jpg" class="profile-pic" loading="lazy" />
+        <div class="profile-pic-wrapper">
+          <img
+            src="~/assets/images/me.jpg"
+            class="profile-pic"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section-wrapper>
   </div>
@@ -61,6 +67,11 @@ export default {
 .section-description-paragraph {
   margin-bottom: 20px;
 }
+.profile-pic-wrapper {
+  /* display: flex;
+  justify-content: center;
+  margin-top: 50px; */
+}
 .profile-pic {
   object-fit: cover;
   width: 300px;
@@ -76,6 +87,25 @@ export default {
   .section-body {
     display: flex;
     flex-direction: column;
+  }
+  .section-description {
+    max-width: 100%;
+  }
+  .profile-pic-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
+}
+/* Phone */
+@media only screen and (max-width: 400px) {
+  .profile-pic {
+    width: 200px;
+    height: 200px;
   }
 }
 </style>
