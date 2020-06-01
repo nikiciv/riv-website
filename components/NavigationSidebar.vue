@@ -7,7 +7,17 @@
     }"
     @click="toggleNavigationSidebar"
   >
-    <div class="sidebar"></div>
+    <div class="sidebar">
+      <nav class="navigation-list">
+        <a
+          v-for="(navLink, index) in navLinks"
+          :key="index"
+          :href="navLink.url"
+          v-smooth-scroll
+          class="navigation-list-item"
+        >{{ navLink.name }}</a>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -71,12 +81,29 @@ export default {
   flex-direction: column;
   background-color: var(--bg-color);
   padding: 50px;
-  width: 50vw;
   height: 100%;
   position: relative;
   right: 0;
   margin-left: auto;
+}
 
-  box-shadow: -10px 0px 30px -15px black;
+.navigation-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.navigation-list-item {
+  margin: 10px auto;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--main-text-color);
+  width: 100%;
 }
 </style>
