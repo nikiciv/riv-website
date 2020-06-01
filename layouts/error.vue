@@ -1,12 +1,20 @@
 <template>
   <v-app>
-    <h1 v-if="error.statusCode === 404">{{ pageNotFound }}</h1>
-    <h1 v-else>{{ otherError }}</h1>
-    <NuxtLink to="/">Home page</NuxtLink>
+    <div class="content">
+      <h1 v-if="error.statusCode === 404" class="styled-title">404</h1>
+      <h1 v-else class="title">500</h1>
+      <h2 v-if="error.statusCode === 404" class="styled-subtitle">{{ pageNotFound }}</h2>
+      <h2 v-else class="styled-subtitle">{{ otherError }}</h2>
+      <custom-button>
+        <NuxtLink to="/">Home page</NuxtLink>
+      </custom-button>
+    </div>
   </v-app>
 </template>
 
 <script>
+import Button from "@/components/Button";
+
 export default {
   layout: "empty",
   props: {
@@ -22,9 +30,12 @@ export default {
       title
     };
   },
+  components: {
+    "custom-button": Button
+  },
   data() {
     return {
-      pageNotFound: "404 Not Found",
+      pageNotFound: "Page Not Found",
       otherError: "An error occurred"
     };
   }
@@ -32,7 +43,29 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-size: 20px;
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--bg-color);
+  background-color: var(--main-text-color);
+  height: 100%;
+  flex-direction: column;
+}
+
+.styled-title {
+  font-size: 150px;
+  line-height: 1;
+}
+
+.styled-subtitle {
+  font-weight: 400;
+}
+
+/* Tablet */
+@media only screen and (max-width: 760px) {
+  .styled-title {
+    font-size: 120px;
+  }
 }
 </style>
