@@ -10,6 +10,9 @@
       <jobs />
       <contact />
     </div>
+    <footer class="footer-section">
+      <div>Built by Ivo Nikić with Vue.js</div>
+    </footer>
   </div>
 </template>
 
@@ -60,6 +63,14 @@ export default {
   /* padding-top: 200px;
   padding-bottom: 200px; */
   overflow: hidden;
+}
+.footer-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  min-height: 70px;
 }
 /* Desktop */
 @media only screen and (max-width: 1000px) {
