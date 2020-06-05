@@ -60,4 +60,10 @@ export default {
   font-size: 16px;
   line-height: 18px;
 }
+/* Phablet */
+@media only screen and (max-width: 520px) {
+  .job-title {
+    text-align: center;
+  }
+}
 </style>

@@ -295,6 +295,7 @@ export default {
     height: 30px;
     width: 30px;
     margin-top: 5px;
+    border: solid 2px var(--main-text-color);
   }
 
   .circ2 {
