@@ -1,7 +1,19 @@
 <template>
   <div class="tab-content">
-    <div v-for="(job, index) in jobs" :key="index" :hidden="activeTabId !== index">
+    <div
+      v-for="(job, index) in jobs"
+      :key="index"
+      :hidden="activeTabId !== index"
+      style="position: relative"
+    >
       <h4 class="job-title">{{job.title}}</h4>
+      <ul class="job-description-container">
+        <li
+          v-for="(descriptionParagraph, index) in job.description"
+          :key="index"
+          class="job-description-paragraph"
+        >{{descriptionParagraph}}</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -21,18 +33,31 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .tab-content {
-  position: relative;
   width: 100%;
   height: auto;
-  padding-top: 12px;
   padding-left: 30px;
 }
 .job-title {
   color: gray;
   font-size: 22px;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+}
+.job-description-container {
+  list-style: none;
+}
+.job-description-paragraph {
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+.job-description-paragraph::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--main-text-color);
+  font-size: 16px;
+  line-height: 18px;
 }
 </style>

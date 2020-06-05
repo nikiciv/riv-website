@@ -89,7 +89,8 @@ export default {
   outline: 0;
 }
 
-@media only screen and (max-width: 600px) {
+/* Phablet */
+@media only screen and (max-width: 520px) {
   .tabs-container {
     display: block;
   }
@@ -102,7 +103,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 400px) {
   .tab-list {
     width: calc(100% + 50px);
     margin-left: -25px;
