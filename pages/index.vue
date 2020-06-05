@@ -59,9 +59,7 @@ export default {
   overflow: hidden;
 }
 .main-section {
-  padding: 0 200px;
-  /* padding-top: 200px;
-  padding-bottom: 200px; */
+  padding: 0 20%;
   overflow: hidden;
 }
 .footer-section {
@@ -71,6 +69,12 @@ export default {
   background-color: black;
   color: white;
   min-height: 70px;
+}
+/* Big Desktop */
+@media only screen and (max-width: 1200px) {
+  .main-section {
+    padding: 0 150px;
+  }
 }
 /* Desktop */
 @media only screen and (max-width: 1000px) {
@@ -85,7 +89,7 @@ export default {
   }
 }
 /* Phone */
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 400px) {
   .main-section {
     padding: 0 25px;
   }
