@@ -1,7 +1,9 @@
 <template>
   <div id="contact">
     <section-wrapper>
-      <section-heading sectionTitle="Get In Touch" />
+      <section-heading sectionTitle="Don't be a stranger" />
+      <section-heading sectionTitle="just say hello." />
+      <p>Feel free to get in touch in touch with me, I am always open to discussing new projects, creative ideas or opportunities.</p>
       <custom-button>Say Hello</custom-button>
     </section-wrapper>
   </div>
