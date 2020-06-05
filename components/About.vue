@@ -17,17 +17,11 @@
             well-developed emotional intelligence and a strong desire to get
             better every day are required.
           </p>
-          <p class="section-description-paragraph">
-            Here are a few technologies I am working with:
-          </p>
+          <p class="section-description-paragraph">Here are a few technologies I am working with:</p>
           <skills />
         </div>
         <div class="profile-pic-wrapper">
-          <img
-            src="~/assets/images/me.jpg"
-            class="profile-pic"
-            loading="lazy"
-          />
+          <img src="~/assets/images/me.jpg" class="profile-pic" loading="lazy" />
         </div>
       </div>
     </section-wrapper>
@@ -56,7 +50,6 @@ export default {
 }
 .section-body {
   display: flex;
-  justify-content: space-between;
 }
 .section-description {
   max-width: 50%;
@@ -68,9 +61,7 @@ export default {
   margin-bottom: 20px;
 }
 .profile-pic-wrapper {
-  /* display: flex;
-  justify-content: center;
-  margin-top: 50px; */
+  margin-left: 80px;
 }
 .profile-pic {
   object-fit: cover;
@@ -82,6 +73,14 @@ export default {
 .profile-pic:hover {
   filter: none;
 }
+/* Desktop */
+@media only screen and (max-width: 1000px) {
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
+}
+
 /* Tablet */
 @media only screen and (max-width: 760px) {
   .section-body {
@@ -94,11 +93,7 @@ export default {
   .profile-pic-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-  }
-  .profile-pic {
-    width: 250px;
-    height: 250px;
+    margin: 50px auto 0;
   }
 }
 /* Phone */
