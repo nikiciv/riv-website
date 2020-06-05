@@ -283,6 +283,28 @@ export default {
   display: none;
 }
 
+/* Phablet */
+@media only screen and (max-width: 520px) {
+  .logo-text {
+    font-size: 8px;
+    margin-top: 8px;
+    letter-spacing: 2px;
+  }
+  .circ1 {
+    margin-left: 23px;
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+  }
+
+  .circ2 {
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 20px;
+    width: 20px;
+  }
+}
+
 /* Tablet */
 @media only screen and (max-width: 760px) {
   .hamburger {
