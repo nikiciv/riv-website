@@ -8,11 +8,7 @@
     }"
   >
     <div class="header-elements-container">
-      <div class="logo-wrapper">
-        <div class="circ1" v-show="isMounted"></div>
-        <div class="circ2" v-show="isMounted"></div>
-        <h1 class="logo-text" v-show="isMounted" :style="{ transitionDelay: '200ms' }">IVOENCODE</h1>
-      </div>
+      <logo :isMounted="isMounted" />
       <nav class="nav-container">
         <transition name="fadedown" v-for="(navLink, index) in navLinks" :key="index">
           <a
@@ -44,20 +40,23 @@
 
 <script>
 import config from "~/assets/config.js";
+import Logo from "@/components/Logo";
 import NavigationSidebar from "@/components/NavigationSidebar";
 
 const DELTA = 5;
+const NAV_HEIGHT = 100;
+
+const { navLinks } = config;
 
 export default {
   components: {
-    NavigationSidebar
+    NavigationSidebar,
+    Logo
   },
   data() {
     return {
-      ceva: config.siteTitle,
-      navLinks: config.navLinks,
+      navLinks,
       isMounted: false,
-      // menuOpen: false,
       scrollDirection: "none",
       lastScrollTop: 0
     };
@@ -85,7 +84,7 @@ export default {
       if (fromTop < DELTA) {
         this.scrollDirection = "none";
         // change 100 to navHeight in config
-      } else if (fromTop > this.lastScrollTop && fromTop > 100) {
+      } else if (fromTop > this.lastScrollTop && fromTop > NAV_HEIGHT) {
         if (this.scrollDirection !== "down") {
           this.scrollDirection = "down";
         }
@@ -141,130 +140,35 @@ export default {
   height: 70px;
   z-index: 100;
 }
-
 .header-scroll-direction-none {
   height: 100px;
 }
-
 .header-scroll-direction-up {
   box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
 }
-
 .header-scroll-direction-down {
   transform: translateY(-70px);
 }
-
 .header-elements-container {
   display: flex;
   align-items: center;
   width: 100%;
   z-index: 12;
 }
-
-.logo-wrapper {
-  margin-right: auto;
-  cursor: pointer;
-}
-
-.circ1 {
-  z-index: 2;
-  position: absolute;
-  margin-left: 40px;
-  height: 35px;
-  width: 35px;
-  margin-top: 5px;
-  border-radius: 100%;
-  border: solid 3px var(--main-text-color);
-  opacity: 0.005;
-  -webkit-animation: puff-in-center 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-  animation: puff-in-center 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-}
-
-.circ2 {
-  z-index: 1;
-  margin-top: 15px;
-  margin-left: 25px;
-  height: 25px;
-  width: 25px;
-  border-radius: 100%;
-  background-color: var(--main-text-color);
-  -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1)
-    both;
-  animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
-}
-
-.logo-text {
-  text-align: center;
-  font-size: 10px;
-  margin-top: 10px;
-  letter-spacing: 4px;
-  font-family: "Nunito", sans-serif;
-  animation: tracking-in-expand 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
-
-@keyframes tracking-in-expand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes puff-in-center {
-  0% {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-in-blurred-top {
-  0% {
-    transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
-    transform-origin: 50% 0%;
-    filter: blur(40px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0) scaleY(1) scaleX(1);
-    transform-origin: 50% 50%;
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-
 .nav-container {
   display: flex;
   position: relative;
   text-transform: uppercase;
-  font-weight: 500;
 }
-
 .nav-list-item {
   margin-right: 20px;
   cursor: pointer;
   text-decoration: none;
   color: var(--main-text-color);
 }
-
 .nav-list-item:hover {
   /* color: var(--secondary-color); */
 }
-
 .hamburger {
   display: flex;
   justify-content: center;
@@ -282,30 +186,6 @@ export default {
   background-color: transparent;
   display: none;
 }
-
-/* Phablet */
-@media only screen and (max-width: 520px) {
-  .logo-text {
-    font-size: 8px;
-    margin-top: 8px;
-    letter-spacing: 2px;
-  }
-  .circ1 {
-    margin-left: 23px;
-    height: 30px;
-    width: 30px;
-    margin-top: 5px;
-    border: solid 2px var(--main-text-color);
-  }
-
-  .circ2 {
-    margin-top: 15px;
-    margin-left: 15px;
-    height: 20px;
-    width: 20px;
-  }
-}
-
 /* Tablet */
 @media only screen and (max-width: 760px) {
   .hamburger {
@@ -315,14 +195,12 @@ export default {
     display: none;
   }
 }
-
 .hamburger-box {
   position: relative;
   display: inline-block;
   width: 30px;
   height: 24px;
 }
-
 .hamburger-inner {
   position: absolute;
   width: 30px;
@@ -338,7 +216,6 @@ export default {
   transform: rotate(0deg);
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-
 .hamburger-inner::before,
 .hamburger-inner::after {
   content: "";
@@ -354,14 +231,12 @@ export default {
   transition-property: transform;
   border-radius: 4px;
 }
-
 .hamburger-inner::before {
   width: 120%;
   top: -10px;
   opacity: 1;
   transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
 }
-
 .hamburger-inner::after {
   width: 80%;
   bottom: -10px;
@@ -369,7 +244,6 @@ export default {
   transition: bottom 0.1s ease-in 0.25s,
     transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-
 .hamburger-inner-menu-open {
   background-color: var(--main-text-color);
   position: absolute;
@@ -386,7 +260,6 @@ export default {
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   z-index: 99;
 }
-
 .hamburger-inner-menu-open::before,
 .hamburger-inner-menu-open::after {
   content: "";
