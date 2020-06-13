@@ -42,7 +42,7 @@ export default {
 .job-title {
   color: gray;
   font-size: 22px;
-  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 .job-description-container {

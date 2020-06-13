@@ -96,7 +96,6 @@ export default {
   text-align: center;
   text-transform: uppercase;
   font-size: 20px;
-  font-weight: 500;
 }
 
 .navigation-list-item {
