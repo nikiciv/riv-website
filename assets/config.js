@@ -1,5 +1,7 @@
 export default {
-  siteTitle: "Ivo Nikic | Web Developer",
+  siteTitle: "Ivo Nikić",
+  logoText: "ivoencode",
+  email: "nikiciv@gmail.com",
   navLinks: [
     {
       name: "About",
@@ -14,7 +16,6 @@ export default {
       url: "#contact"
     }
   ],
-  navHeight: 100,
   skills: [
     "JavaScript",
     "React",
