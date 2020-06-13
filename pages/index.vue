@@ -1,5 +1,10 @@
 <template>
-  <div :class="{ 'content': true, 'content-no-overflow': isNavigationSidebarOpen === true }">
+  <div
+    :class="{
+      content: true,
+      'content-no-overflow': isNavigationSidebarOpen === true
+    }"
+  >
     <navigation
       :isNavigationSidebarOpen="isNavigationSidebarOpen"
       @toggle-navigation-sidebar="toggleNavigationSidebar"
@@ -11,7 +16,10 @@
       <contact />
     </div>
     <footer class="footer-section">
-      <div>Built by Ivo Nikić with Vue.js</div>
+      <div>
+        Built by Ivo Nikić with
+        <font-awesome-icon :icon="['fab', 'vuejs']" color="mediumseagreen" />
+      </div>
     </footer>
   </div>
 </template>

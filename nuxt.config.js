@@ -39,6 +39,7 @@ export default {
    */
   plugins: [
     "~/plugins/smooth-scroll",
+    "~/plugins/font-awesome-icon",
     { src: "~/plugins/vue-typed-js", mode: "client" }
   ],
   /*
