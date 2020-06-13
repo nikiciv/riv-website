@@ -2,12 +2,12 @@
   <v-app>
     <div class="content">
       <h1 v-if="error.statusCode === 404" class="styled-title">404</h1>
-      <h1 v-else class="title">500</h1>
+      <h1 v-else class="styled-title">500</h1>
       <h2 v-if="error.statusCode === 404" class="styled-subtitle">{{ pageNotFound }}</h2>
       <h2 v-else class="styled-subtitle">{{ otherError }}</h2>
-      <custom-button>
-        <NuxtLink to="/">Home page</NuxtLink>
-      </custom-button>
+      <div class="button-wrapper">
+        <link-button href="/">Home Page</link-button>
+      </div>
     </div>
   </v-app>
 </template>
@@ -31,7 +31,7 @@ export default {
     };
   },
   components: {
-    "custom-button": Button
+    "link-button": Button
   },
   data() {
     return {
@@ -47,19 +47,28 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--bg-color);
-  background-color: var(--main-text-color);
   height: 100%;
+  color: var(--main-text-color);
   flex-direction: column;
+}
+.button-wrapper {
+  margin-top: 30px;
+}
+
+.button-wrapper > a {
+  font-size: 20px;
+  padding: 15px 20px;
+  color: black;
 }
 
 .styled-title {
+  font-weight: bold;
   font-size: 150px;
   line-height: 1;
 }
 
 .styled-subtitle {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Tablet */
