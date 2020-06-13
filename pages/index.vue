@@ -68,6 +68,7 @@ export default {
   align-items: center;
   background-color: black;
   color: white;
+  font-family: monospace;
   min-height: 70px;
 }
 /* Big Desktop */
