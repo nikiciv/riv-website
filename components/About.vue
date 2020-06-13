@@ -1,7 +1,6 @@
 <template>
   <div id="about">
     <section-wrapper>
-      <!-- sectionTitle & other section info will be passed from config file in future -->
       <section-heading sectionTitle="About" />
       <div class="section-body">
         <div class="section-description">
@@ -67,7 +66,7 @@ export default {
   object-fit: cover;
   width: 300px;
   height: 300px;
-  border-radius: 3px;
+  border-radius: 5px;
   filter: grayscale(100%) contrast(1);
 }
 .profile-pic:hover {
@@ -80,7 +79,6 @@ export default {
     height: 250px;
   }
 }
-
 /* Tablet */
 @media only screen and (max-width: 760px) {
   .section-body {
