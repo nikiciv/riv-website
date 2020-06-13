@@ -56,7 +56,6 @@ export default {
 }
 
 .button-wrapper > a {
-  font-size: 20px;
   padding: 15px 20px;
   color: black;
 }

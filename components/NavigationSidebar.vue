@@ -95,7 +95,7 @@ export default {
   flex-direction: column;
   text-align: center;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: var(--font-size-lg);
 }
 
 .navigation-list-item {

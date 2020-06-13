@@ -10,13 +10,13 @@
       </transition>
       <transition name="fadeup">
         <div
-          class="title-primary"
+          class="title title-primary"
           :style="{ transitionDelay: '200ms' }"
           v-show="isMounted"
         >Ivo Nikić.</div>
       </transition>
       <transition name="fadeup">
-        <div class="title-secondary" :style="{ transitionDelay: '300ms' }" v-show="isMounted">
+        <div class="title title-secondary" :style="{ transitionDelay: '300ms' }" v-show="isMounted">
           <vue-typed-js :strings="['code', 'JS', 'React', 'Vue', 'CSS', 'Node']" :loop="true">
             <div>
               I write
@@ -76,17 +76,17 @@ export default {
 .title-overline {
   color: var(--secondary-text-color);
   margin-left: 5px;
-  font-size: 22px;
+  font-size: var(--font-size-lg);
+}
+.title {
+  font-size: var(--font-size-title-big-desktop);
+  margin: 0;
 }
 .title-primary {
   color: var(--main-text-color);
-  font-size: 80px;
-  margin: 0;
 }
 .title-secondary {
   color: var(--secondary-text-color);
-  font-size: 80px;
-  margin: 0;
 }
 .landing-description {
   margin-top: 25px;
@@ -98,53 +98,33 @@ export default {
   transition-delay: 500ms;
 }
 .button-wrapper > a {
-  font-size: 20px;
   padding: 15px 20px;
 }
 /* Desktop */
 @media only screen and (max-width: 1000px) {
   .title-overline {
-    font-size: 18px;
+    font-size: var(--font-size-lg);
   }
-  .title-primary {
-    font-size: 70px;
-    margin: 0;
-  }
-  .title-secondary {
-    font-size: 70px;
-    margin: 0;
+  .title {
+    font-size: var(--font-size-title-desktop);
   }
 }
 /* Tablet */
 @media only screen and (max-width: 720px) {
-  .title-overline {
-    font-size: 18px;
-  }
-  .title-primary {
-    font-size: 50px;
-    margin: 0;
-  }
-  .title-secondary {
-    font-size: 50px;
-    margin: 0;
+  .title {
+    font-size: var(--font-size-title-tablet);
   }
 }
-/* Phone */
-@media only screen and (max-width: 400px) {
+/* Phablet */
+@media only screen and (max-width: 520px) {
   .main-section {
     padding: 0 25px;
   }
   .title-overline {
-    font-size: 16px;
     margin-left: 3px;
   }
-  .title-primary {
-    font-size: 40px;
-    margin: 0;
-  }
-  .title-secondary {
-    font-size: 40px;
-    margin: 0;
+  .title {
+    font-size: var(--font-size-title-phablet);
   }
 }
 </style>

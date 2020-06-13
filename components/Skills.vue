@@ -28,7 +28,6 @@ export default {
   align-items: center;
   position: relative;
   padding-left: 15px;
-  font-size: 15px;
   font-weight: bold;
 }
 .skill-item::before {
@@ -36,8 +35,6 @@ export default {
   position: absolute;
   left: 0;
   color: var(--main-text-color);
-  font-size: 15px;
-  line-height: 15px;
 }
 /* Desktop */
 @media only screen and (max-width: 1000px) {

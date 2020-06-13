@@ -53,6 +53,7 @@ export default {
   height: 100%;
   flex-direction: column;
   font-family: "Quicksand", sans-serif;
+  font-size: var(--font-size-md);
 }
 .content-no-overflow {
   height: 100vh;

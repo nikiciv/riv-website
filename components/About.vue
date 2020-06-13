@@ -53,7 +53,6 @@ export default {
 .section-description {
   max-width: 50%;
   line-height: 25px;
-  font-size: 15px;
   color: var(--main-text-color);
 }
 .section-description-paragraph {

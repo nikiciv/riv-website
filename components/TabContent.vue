@@ -41,7 +41,7 @@ export default {
 }
 .job-title {
   color: gray;
-  font-size: 22px;
+  font-size: var(--font-size-lg);
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -57,7 +57,7 @@ export default {
   position: absolute;
   left: 0;
   color: var(--main-text-color);
-  font-size: 16px;
+  font-size: var(--font-size-md);
   line-height: 18px;
 }
 /* Phablet */

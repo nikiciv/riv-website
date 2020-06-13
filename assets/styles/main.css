@@ -1,8 +1,23 @@
 :root {
+  /* Color variables */
   --bg-color: white;
   --secondary-color: darkorange;
   --main-text-color: black;
-  --secondary-text-color:#606060;
+  --secondary-text-color: #606060;
+
+  /* Font size variables */
+  --font-size-sm: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 24px;
+
+  --font-size-title-phablet: 45px;
+  --font-size-title-tablet: 60px;
+  --font-size-title-desktop: 80px;
+  --font-size-title-big-desktop: 100px;
+
+  --section-heading-font-size-sm: 35px;
+  --section-heading-font-size-md: 45px;
+  --section-heading-font-size-lg: 60px;
 }
 
 body {
