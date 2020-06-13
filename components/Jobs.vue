@@ -1,7 +1,7 @@
 <template>
   <div id="jobs">
     <section-wrapper>
-      <section-heading sectionTitle="Where I've worked" />
+      <section-heading>Where I've worked</section-heading>
       <div class="tabs-container">
         <ul class="tab-list">
           <li v-for="(job, index) in jobs" :key="index">

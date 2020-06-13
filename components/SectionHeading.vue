@@ -1,29 +1,26 @@
 <template>
-  <h3 class="section-heading">{{ sectionTitle }}</h3>
+  <h3 class="section-heading">
+    <slot></slot>
+  </h3>
 </template>
-
-<script>
-export default {
-  props: {
-    sectionTitle: {
-      type: String,
-      required: true
-    }
-  }
-};
-</script>
 
 <style>
 .section-heading {
-  display: flex;
+  font-family: monospace;
   color: var(--main-text-color);
-  font-size: 40px;
+  font-size: 50px;
   margin: 20px 0;
 }
 /* Tablet */
 @media only screen and (max-width: 760px) {
   .section-heading {
-    font-size: 24px;
+    font-size: 40px;
+  }
+}
+/* Phablet */
+@media only screen and (max-width: 520px) {
+  .section-heading {
+    font-size: 30px;
   }
 }
 </style>

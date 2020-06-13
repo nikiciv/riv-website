@@ -1,7 +1,7 @@
 <template>
   <div id="about">
     <section-wrapper>
-      <section-heading sectionTitle="About" />
+      <section-heading>About</section-heading>
       <div class="section-body">
         <div class="section-description">
           <p class="section-description-paragraph">
