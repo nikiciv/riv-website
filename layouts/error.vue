@@ -75,5 +75,9 @@ export default {
   .styled-title {
     font-size: 120px;
   }
+  .button-wrapper > a {
+    padding: 10px 15px;
+    color: black;
+  }
 }
 </style>

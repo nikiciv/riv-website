@@ -45,11 +45,18 @@ export default {
 }
 .section-description-paragraph {
   margin-top: 20px;
+  line-height: 25px;
 }
 .button-wrapper {
   margin-top: 60px;
 }
 .button-wrapper > a {
   padding: 15px 20px;
+}
+/* Tablet */
+@media only screen and (max-width: 760px) {
+  .button-wrapper > a {
+    padding: 10px 15px;
+  }
 }
 </style>

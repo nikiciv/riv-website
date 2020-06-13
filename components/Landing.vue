@@ -92,6 +92,7 @@ export default {
   margin-top: 25px;
   max-width: 500px;
   margin-left: 3px;
+  line-height: 25px;
 }
 .button-wrapper {
   margin-top: 60px;
@@ -103,7 +104,7 @@ export default {
 /* Desktop */
 @media only screen and (max-width: 1000px) {
   .title-overline {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-md);
   }
   .title {
     font-size: var(--font-size-title-desktop);
@@ -113,6 +114,9 @@ export default {
 @media only screen and (max-width: 720px) {
   .title {
     font-size: var(--font-size-title-tablet);
+  }
+  .button-wrapper > a {
+    padding: 10px 15px;
   }
 }
 /* Phablet */

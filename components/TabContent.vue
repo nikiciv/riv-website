@@ -49,8 +49,11 @@ export default {
   list-style: none;
 }
 .job-description-paragraph {
+  display: flex;
+  align-items: center;
   padding-left: 30px;
   padding-bottom: 10px;
+  line-height: 25px;
 }
 .job-description-paragraph::before {
   content: "▹";
