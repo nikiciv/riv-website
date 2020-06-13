@@ -88,7 +88,6 @@ export default {
   background-color: var(--main-text-color);
   outline: 0;
 }
-
 /* Phablet */
 @media only screen and (max-width: 520px) {
   .tabs-container {
@@ -102,7 +101,6 @@ export default {
     margin-left: -50px;
   }
 }
-
 @media only screen and (max-width: 400px) {
   .tab-list {
     width: calc(100% + 50px);
