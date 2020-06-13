@@ -52,7 +52,7 @@ export default {
   background-color: var(--bg-color);
   height: 100%;
   flex-direction: column;
-  font-family: "Lato", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 .content-no-overflow {
   height: 100vh;
