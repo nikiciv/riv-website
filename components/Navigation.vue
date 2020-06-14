@@ -10,23 +10,28 @@
     <div class="header-elements-container">
       <logo :isMounted="isMounted" />
       <nav class="nav-container">
-        <transition name="fadedown" v-for="(navLink, index) in navLinks" :key="index">
+        <transition
+          name="fadedown"
+          v-for="(navLink, index) in navLinks"
+          :key="index"
+        >
           <a
             :href="navLink.url"
             v-smooth-scroll
             v-show="isMounted"
             :style="{ transitionDelay: index * 0.1 + 's' }"
             class="nav-list-item"
-          >{{ navLink.name }}</a>
+            >{{ navLink.name }}</a
+          >
         </transition>
       </nav>
       <div class="hamburger" @click="toggleNavigationSidebar">
         <div class="hamburger-box">
           <div
             :class="{
-            'hamburger-inner': isNavigationSidebarOpen === false,
-            'hamburger-inner-menu-open': isNavigationSidebarOpen === true
-          }"
+              'hamburger-inner': isNavigationSidebarOpen === false,
+              'hamburger-inner-menu-open': isNavigationSidebarOpen === true
+            }"
           ></div>
         </div>
       </div>
@@ -132,8 +137,7 @@ export default {
   position: fixed;
   top: 0;
   padding: 0px 50px;
-  background-color: var(--bg-color);
-  color: var(--main-text-color);
+  background-color: var(--color-primary);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform: translateY(0);
   width: 100%;
@@ -164,10 +168,7 @@ export default {
   margin-right: 20px;
   cursor: pointer;
   text-decoration: none;
-  color: var(--main-text-color);
-}
-.nav-list-item:hover {
-  /* color: var(--secondary-color); */
+  color: var(--color-txt-secondary);
 }
 .hamburger {
   display: flex;
@@ -206,7 +207,7 @@ export default {
   width: 30px;
   height: 2px;
   border-radius: 3px;
-  background-color: var(--main-text-color);
+  background-color: var(--color-txt-secondary);
   top: 50%;
   left: 0;
   right: 0;
@@ -220,7 +221,7 @@ export default {
 .hamburger-inner::after {
   content: "";
   display: block;
-  background-color: var(--main-text-color);
+  background-color: var(--color-txt-secondary);
   position: absolute;
   left: auto;
   right: 0;
@@ -245,7 +246,7 @@ export default {
     transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 .hamburger-inner-menu-open {
-  background-color: var(--main-text-color);
+  background-color: var(--color-txt-secondary);
   position: absolute;
   width: 30px;
   height: 2px;
@@ -264,7 +265,7 @@ export default {
 .hamburger-inner-menu-open::after {
   content: "";
   display: block;
-  background-color: var(--main-text-color);
+  background-color: var(--color-txt-secondary);
   position: absolute;
   left: auto;
   right: 0;

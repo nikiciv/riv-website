@@ -5,9 +5,10 @@
         <div>Don't be a stranger</div>
         <div>just say hello.</div>
       </section-heading>
-      <p
-        class="section-description-paragraph"
-      >Feel free to get in touch in touch with me, I am always open to discussing new projects, creative ideas or opportunities.</p>
+      <p class="section-description-paragraph">
+        Feel free to get in touch with me, I am always open to discussing new
+        projects, creative ideas or opportunities.
+      </p>
       <div class="button-wrapper">
         <link-button :href="emailLink" target="_blank">Say Hello</link-button>
       </div>
@@ -46,6 +47,7 @@ export default {
 .section-description-paragraph {
   margin-top: 20px;
   line-height: 25px;
+  color: var(--color-txt-primary);
 }
 .button-wrapper {
   margin-top: 60px;

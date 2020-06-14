@@ -7,7 +7,7 @@
 <style>
 .section-heading {
   font-family: monospace;
-  color: var(--main-text-color);
+  color: var(--color-txt-secondary);
   font-size: var(--section-heading-font-size-lg);
   margin: 20px 0;
 }

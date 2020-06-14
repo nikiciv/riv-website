@@ -6,18 +6,29 @@
           class="title-overline"
           :style="{ transitionDelay: '100ms' }"
           v-show="isMounted"
-        >Hi, my name is</div>
+        >
+          Hi, my name is
+        </div>
       </transition>
       <transition name="fadeup">
         <div
           class="title title-primary"
           :style="{ transitionDelay: '200ms' }"
           v-show="isMounted"
-        >Ivo Nikić.</div>
+        >
+          Ivo Nikić.
+        </div>
       </transition>
       <transition name="fadeup">
-        <div class="title title-secondary" :style="{ transitionDelay: '300ms' }" v-show="isMounted">
-          <vue-typed-js :strings="['code', 'JS', 'React', 'Vue', 'CSS', 'Node']" :loop="true">
+        <div
+          class="title title-secondary"
+          :style="{ transitionDelay: '300ms' }"
+          v-show="isMounted"
+        >
+          <vue-typed-js
+            :strings="['code', 'JS', 'React', 'Vue', 'CSS', 'Node']"
+            :loop="true"
+          >
             <div>
               I write
               <span class="typing"></span>.
@@ -26,14 +37,20 @@
         </div>
       </transition>
       <transition name="fadeup">
-        <p class="landing-description" :style="{ transitionDelay: '400ms' }" v-show="isMounted">
+        <p
+          class="landing-description"
+          :style="{ transitionDelay: '400ms' }"
+          v-show="isMounted"
+        >
           I'm a software engineer specialized in building high-quality web
           applications.
         </p>
       </transition>
       <transition name="fadeup">
         <div class="button-wrapper" v-show="isMounted">
-          <link-button :href="emailLink" target="_blank">Get In Touch</link-button>
+          <link-button :href="emailLink" target="_blank"
+            >Get In Touch</link-button
+          >
         </div>
       </transition>
     </section-wrapper>
@@ -74,7 +91,7 @@ export default {
   min-height: 100vh;
 }
 .title-overline {
-  color: var(--secondary-text-color);
+  color: var(--color-secondary);
   margin-left: 5px;
   font-size: var(--font-size-lg);
 }
@@ -83,16 +100,17 @@ export default {
   margin: 0;
 }
 .title-primary {
-  color: var(--main-text-color);
+  color: var(--color-txt-primary);
 }
 .title-secondary {
-  color: var(--secondary-text-color);
+  color: var(--color-txt-secondary);
 }
 .landing-description {
   margin-top: 25px;
   max-width: 500px;
   margin-left: 3px;
   line-height: 25px;
+  color: var(--color-txt-primary);
 }
 .button-wrapper {
   margin-top: 60px;

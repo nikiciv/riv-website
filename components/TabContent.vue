@@ -6,13 +6,15 @@
       :hidden="activeTabId !== index"
       style="position: relative"
     >
-      <h4 class="job-title">{{job.title}}</h4>
+      <h4 class="job-title">{{ job.title }}</h4>
       <ul class="job-description-container">
         <li
           v-for="(descriptionParagraph, index) in job.description"
           :key="index"
           class="job-description-paragraph"
-        >{{descriptionParagraph}}</li>
+        >
+          {{ descriptionParagraph }}
+        </li>
       </ul>
     </div>
   </div>
@@ -40,7 +42,7 @@ export default {
   padding-left: 30px;
 }
 .job-title {
-  color: gray;
+  color: var(--color-txt-secondary);
   font-size: var(--font-size-lg);
   font-weight: bold;
   margin-bottom: 20px;
@@ -59,7 +61,7 @@ export default {
   content: "▹";
   position: absolute;
   left: 0;
-  color: var(--main-text-color);
+  color: var(--color-secondary);
   font-size: var(--font-size-md);
   line-height: 18px;
 }

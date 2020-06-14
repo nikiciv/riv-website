@@ -5,7 +5,13 @@
       <div class="tabs-container">
         <ul class="tab-list">
           <li v-for="(job, index) in jobs" :key="index">
-            <button class="tab-button" ref="tabs" @click="setActiveTabId(index)">{{job.company}}</button>
+            <button
+              class="tab-button"
+              ref="tabs"
+              @click="setActiveTabId(index)"
+            >
+              {{ job.company }}
+            </button>
           </li>
         </ul>
         <tab-content :jobs="jobs" :activeTabId="activeTabId" />
@@ -20,7 +26,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import TabContent from "@/components/TabContent";
 import SectionHeading from "@/components/SectionHeading";
 
-const { jobs, companies } = config;
+const { jobs } = config;
 
 export default {
   components: {
@@ -31,7 +37,6 @@ export default {
   data() {
     return {
       activeTabId: 0,
-      companies,
       jobs
     };
   },
@@ -43,11 +48,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #jobs {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: var(--color-txt-primary);
 }
 .tabs-container {
   display: flex;
@@ -77,15 +83,15 @@ export default {
   height: 40px;
   padding: 0 20px 2px;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  border-left: 2px solid darkgray;
+  border-left: 2px solid var(--color-txt-secondary);
   text-align: left;
   white-space: nowrap;
 }
 .tab-button:hover,
 .tab-button:focus,
 .tab-button:active {
-  color: var(--bg-color);
-  background-color: var(--main-text-color);
+  color: var(--color-primary);
+  background-color: var(--color-txt-secondary);
   outline: 0;
 }
 /* Phablet */

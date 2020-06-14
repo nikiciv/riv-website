@@ -14,13 +14,13 @@
       <about />
       <jobs />
       <contact />
+      <footer class="footer-section">
+        <div>
+          Built by Ivo Nikić with
+          <font-awesome-icon :icon="['fab', 'vuejs']" color="mediumseagreen" />
+        </div>
+      </footer>
     </div>
-    <footer class="footer-section">
-      <div>
-        Built by Ivo Nikić with
-        <font-awesome-icon :icon="['fab', 'vuejs']" color="mediumseagreen" />
-      </div>
-    </footer>
   </div>
 </template>
 
@@ -57,7 +57,7 @@ export default {
 <style scoped>
 .content {
   display: flex;
-  background-color: var(--bg-color);
+  background-color: var(--color-primary);
   height: 100%;
   flex-direction: column;
   font-family: "Quicksand", sans-serif;
@@ -75,10 +75,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: white;
   font-family: monospace;
   min-height: 70px;
+  color: var(--color-txt-secondary);
 }
 /* Big Desktop */
 @media only screen and (max-width: 1200px) {

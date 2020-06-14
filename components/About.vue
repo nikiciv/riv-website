@@ -16,11 +16,17 @@
             well-developed emotional intelligence and a strong desire to get
             better every day are required.
           </p>
-          <p class="section-description-paragraph">Here are a few technologies I am working with:</p>
+          <p class="section-description-paragraph">
+            Here are a few technologies I am working with:
+          </p>
           <skills />
         </div>
         <div class="profile-pic-wrapper">
-          <img src="~/assets/images/me.jpg" class="profile-pic" loading="lazy" />
+          <img
+            src="~/assets/images/me.jpg"
+            class="profile-pic"
+            loading="lazy"
+          />
         </div>
       </div>
     </section-wrapper>
@@ -53,7 +59,7 @@ export default {
 .section-description {
   max-width: 50%;
   line-height: 25px;
-  color: var(--main-text-color);
+  color: var(--color-txt-primary);
 }
 .section-description-paragraph {
   margin-bottom: 20px;

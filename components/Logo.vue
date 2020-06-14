@@ -6,7 +6,9 @@
       class="logo-text"
       v-show="isMounted"
       :style="{ transitionDelay: '200ms' }"
-    >{{logoText.toUpperCase()}}</h1>
+    >
+      {{ logoText.toUpperCase() }}
+    </h1>
   </div>
 </template>
 
@@ -33,17 +35,18 @@ export default {
 .logo-wrapper {
   margin-right: auto;
   cursor: pointer;
+  color: var(--color-secondary);
 }
 
 .circ1 {
   z-index: 2;
   position: absolute;
-  margin-left: 40px;
+  margin-left: 39px;
   height: 35px;
   width: 35px;
   margin-top: 5px;
   border-radius: 100%;
-  border: solid 3px var(--main-text-color);
+  border: solid 3px var(--color-txt-secondary);
   opacity: 0.005;
   -webkit-animation: puff-in-center 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
   animation: puff-in-center 1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
@@ -51,11 +54,11 @@ export default {
 .circ2 {
   z-index: 1;
   margin-top: 15px;
-  margin-left: 25px;
+  margin-left: 23px;
   height: 25px;
   width: 25px;
   border-radius: 100%;
-  background-color: var(--main-text-color);
+  background-color: var(--color-secondary);
   -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1)
     both;
   animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -65,7 +68,6 @@ export default {
   font-size: 10px;
   margin-top: 10px;
   letter-spacing: 4px;
-  /* font-family: "Nunito", sans-serif; */
   animation: tracking-in-expand 1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 @keyframes tracking-in-expand {
@@ -113,20 +115,20 @@ export default {
 /* Phablet */
 @media only screen and (max-width: 520px) {
   .logo-text {
-    font-size: 8px;
+    font-size: 10px;
     margin-top: 8px;
     letter-spacing: 2px;
   }
   .circ1 {
-    margin-left: 23px;
+    margin-left: 30px;
     height: 30px;
     width: 30px;
     margin-top: 5px;
-    border: solid 2px var(--main-text-color);
+    border: solid 2px var(--color-txt-secondary);
   }
   .circ2 {
     margin-top: 15px;
-    margin-left: 15px;
+    margin-left: 20px;
     height: 20px;
     width: 20px;
   }

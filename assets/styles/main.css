@@ -1,9 +1,9 @@
 :root {
   /* Color variables */
-  --bg-color: white;
-  --secondary-color: darkorange;
-  --main-text-color: black;
-  --secondary-text-color: #606060;
+  --color-primary: black;
+  --color-secondary: darkorange;
+  --color-txt-primary: #606060;
+  --color-txt-secondary: snow;
 
   /* Font size variables */
   --font-size-sm: 16px;

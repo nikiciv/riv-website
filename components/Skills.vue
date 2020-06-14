@@ -1,7 +1,9 @@
 <template>
   <div>
     <ul class="skills-container">
-      <li class="skill-item" v-for="(skill, index) in skills" :key="index">{{ skill }}</li>
+      <li class="skill-item" v-for="(skill, index) in skills" :key="index">
+        {{ skill }}
+      </li>
     </ul>
   </div>
 </template>
@@ -22,6 +24,7 @@ export default {
 .skills-container {
   column-count: 3;
   list-style: none;
+  color: var(--color-txt-secondary);
 }
 .skill-item {
   display: flex;
@@ -34,7 +37,7 @@ export default {
   content: "▹";
   position: absolute;
   left: 0;
-  color: var(--main-text-color);
+  color: var(--color-secondary);
 }
 /* Desktop */
 @media only screen and (max-width: 1000px) {

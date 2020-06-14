@@ -26,7 +26,6 @@ export default {
     "Vue.js",
     "Node.js"
   ],
-  companies: ["Evozon", "Modus Create", "Atoss", "Continental"],
   jobs: [
     {
       company: "Evozon",

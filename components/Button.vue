@@ -7,8 +7,8 @@
 <style>
 .button {
   background-color: transparent;
-  color: var(--main-text-color);
-  border: 1px solid var(--main-text-color);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
   border-radius: 3px;
   font-family: monospace;
   text-decoration: none;
@@ -17,5 +17,3 @@
   outline: none;
 }
 </style>
-
-

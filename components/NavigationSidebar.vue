@@ -15,7 +15,8 @@
           :href="navLink.url"
           v-smooth-scroll
           class="navigation-list-item"
-        >{{ navLink.name }}</a>
+          >{{ navLink.name }}</a
+        >
       </nav>
     </div>
   </div>
@@ -79,7 +80,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--bg-color);
+  background-color: var(--color-primary);
   padding: 50px;
   height: 100%;
   position: relative;
@@ -102,7 +103,7 @@ export default {
   margin: 10px auto;
   cursor: pointer;
   text-decoration: none;
-  color: var(--main-text-color);
+  color: var(--color-txt-secondary);
   width: 100%;
 }
 </style>
