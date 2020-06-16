@@ -41,6 +41,10 @@ export default {
     { src: "~/plugins/vue-typed-js", mode: "client" }
   ],
   /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: ["@nuxtjs/vuetify"],
+  /*
    ** Nuxt.js modules
    */
   modules: [],
